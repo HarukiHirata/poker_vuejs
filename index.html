@@ -13,9 +13,27 @@
 
 <body>
     <div id="app">
-        <img v-bind:src="img_src" alt="画像" class="card_img">
-        <button v-on:click="drawCard">カードを引く</button>
-        <button v-on:click="gameStart">ゲーム開始</button>
+        <div class="cards">
+            <div class="card_img" v-on:click="borderChange1">
+                <img v-bind:src="img_src1" alt="画像" v-bind:class="{'is-border': isBorder1}" id="card1">
+            </div>
+            <div class="card_img" v-on:click="borderChange2">
+                <img v-bind:src="img_src2" alt="画像" v-bind:class="{'is-border': isBorder2}" id="card2">
+            </div>
+            <div class="card_img" v-on:click="borderChange3">
+                <img v-bind:src="img_src3" alt="画像" v-bind:class="{'is-border': isBorder3}" id="card3">
+            </div>
+            <div class="card_img" v-on:click="borderChange4">
+                <img v-bind:src="img_src4" alt="画像" v-bind:class="{'is-border': isBorder4}" id="card4">
+            </div>
+            <div class="card_img" v-on:click="borderChange5">
+                <img v-bind:src="img_src5" alt="画像" v-bind:class="{'is-border': isBorder5}" id="card5">
+            </div>
+        </div>   
+        <button v-on:click="drawCard" v-if="gameStep == 1">ゲーム開始</button>
+        <button v-on:click="cardChange" v-if="gameStep == 2">カード交換</button>
+        <button v-on:click="showResult" v-if="gameStep == 2">交換せず結果を見る</button>
+        <button v-on:click="showResult" v-if="gameStep == 3">結果を見る</button>
     </div>
     <script type="text/javascript" src="sample.js"></script>
 </body>
