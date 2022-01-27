@@ -1,10 +1,20 @@
+#app {
+    width: 100vw;
+    margin: 0 auto;
+    text-align: center;
+}
+
 .cards {
     display: flex;
+    text-align: center;
+    margin: 0 auto;
+    width: 70%;
+    height: 70%;
 }
 
 .card_img {
-    width: 200px;
-    height: 300px;
+    width: 90%;
+    height: 90%;
 }
 
 img {
